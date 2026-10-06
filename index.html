@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GAMPAY JOKI MLBB</title>
+<meta name="description" content="Gampay Joki MLBB - Jasa joki Epic, Legend, Mythic dan Mythic Honor.">
+<style>
+:root{
+  --bg:#070914;--card:#101426;--card2:#151a30;--text:#f6f7fb;--muted:#9ca6c4;
+  --primary:#6d5dfc;--primary2:#00d4ff;--line:#252c48;--ok:#36e39b;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background:radial-gradient(circle at 20% 0%,#20205c 0,transparent 35%),radial-gradient(circle at 100% 20%,#063e54 0,transparent 30%),var(--bg);
+  color:var(--text);min-height:100vh;
+}
+.container{width:min(1100px,92%);margin:auto}
+header{padding:22px 0}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:15px}
+.logo{font-size:25px;font-weight:900;letter-spacing:1px}
+.logo span{color:var(--primary2)}
+.badge{font-size:12px;color:#cdd4f2;border:1px solid var(--line);padding:8px 12px;border-radius:99px;background:#0c1020}
+.hero{text-align:center;padding:55px 0 35px}
+.hero h1{font-size:clamp(34px,7vw,64px);line-height:1.02;margin-bottom:15px}
+.hero h1 span{background:linear-gradient(90deg,var(--primary2),#9a6dff);-webkit-background-clip:text;color:transparent}
+.hero p{color:var(--muted);max-width:650px;margin:auto;line-height:1.6}
+.section-title{text-align:center;margin:20px 0 22px}
+.section-title h2{font-size:26px}.section-title p{color:var(--muted);margin-top:6px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.card{background:linear-gradient(180deg,#141a31,#0d1121);border:1px solid var(--line);border-radius:20px;padding:22px;position:relative;overflow:hidden;transition:.2s}
+.card:hover{transform:translateY(-4px);border-color:#4c56a1}
+.rank{font-size:18px;font-weight:800}.sub{font-size:13px;color:var(--muted);margin:6px 0 18px}
+.price{font-size:25px;font-weight:900;margin-bottom:16px}
+.price small{font-size:12px;color:var(--muted);font-weight:500}
+.btn{width:100%;border:0;border-radius:12px;padding:12px 14px;font-weight:800;cursor:pointer;color:white;background:linear-gradient(90deg,var(--primary),#875fff)}
+.pop{position:absolute;right:12px;top:12px;font-size:10px;background:#233d70;color:#8deaff;padding:5px 8px;border-radius:99px}
+.order{margin:45px 0 70px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.panel{background:rgba(16,20,38,.9);border:1px solid var(--line);border-radius:22px;padding:24px}
+.panel h3{font-size:20px;margin-bottom:18px}
+label{display:block;color:#cbd2ea;font-size:13px;margin:14px 0 7px}
+input,select,textarea{width:100%;border:1px solid var(--line);background:#090d1a;color:white;border-radius:12px;padding:13px;outline:none;font:inherit}
+textarea{min-height:100px;resize:vertical}
+.total{display:flex;justify-content:space-between;align-items:center;padding:15px 0;margin-top:8px;border-top:1px solid var(--line)}
+.total strong{font-size:25px;color:var(--ok)}
+.wa{background:#1fbf72!important;margin-top:12px;font-size:15px}
+.note{font-size:12px;color:var(--muted);line-height:1.5;margin-top:12px}
+footer{text-align:center;color:#6f7895;font-size:12px;padding:0 0 25px}
+@media(max-width:850px){.grid{grid-template-columns:repeat(2,1fr)}.order{grid-template-columns:1fr}}
+@media(max-width:500px){.grid{grid-template-columns:1fr}.hero{padding-top:35px}}
+</style>
+</head>
+<body>
+<header>
+<div class="container nav">
+  <div class="logo">GAM<span>PAY</span></div>
+  <div class="badge">JOKI MLBB • FAST & SIMPLE</div>
+</div>
+</header>
+
+<main class="container">
+<section class="hero">
+  <h1>JOKI MLBB <span>GAMPAY</span></h1>
+  <p>Pilih rank, tentukan jumlah bintang, cek total otomatis, lalu kirim detail order langsung ke WhatsApp.</p>
+</section>
+
+<section>
+<div class="section-title">
+  <h2>Pilih Layanan</h2>
+  <p>Harga dasar Rp2.000 / 1 bintang</p>
+</div>
+<div class="grid">
+  <div class="card"><div class="rank">Epic</div><div class="sub">Joki bintang</div><div class="price">Rp2.000 <small>/ bintang</small></div><button class="btn" onclick="chooseRank('Epic')">Pilih Epic</button></div>
+  <div class="card"><div class="rank">Legend</div><div class="sub">Joki bintang</div><div class="price">Rp2.000 <small>/ bintang</small></div><button class="btn" onclick="chooseRank('Legend')">Pilih Legend</button></div>
+  <div class="card"><div class="pop">POPULAR</div><div class="rank">Mythic</div><div class="sub">Joki bintang</div><div class="price">Rp2.000 <small>/ bintang</small></div><button class="btn" onclick="chooseRank('Mythic')">Pilih Mythic</button></div>
+  <div class="card"><div class="rank">Mythic Honor</div><div class="sub">Joki bintang</div><div class="price">Rp2.000 <small>/ bintang</small></div><button class="btn" onclick="chooseRank('Mythic Honor')">Pilih Honor</button></div>
+</div>
+</section>
+
+<section class="order" id="order">
+<div class="panel">
+  <h3>📝 Detail Order</h3>
+  <label>Rank</label>
+  <select id="rank" onchange="calculate()">
+    <option value="Epic">Epic</option><option value="Legend">Legend</option>
+    <option value="Mythic">Mythic</option><option value="Mythic Honor">Mythic Honor</option>
+  </select>
+  <label>Jumlah bintang</label>
+  <input id="stars" type="number" min="1" max="100" value="1" oninput="calculate()">
+  <label>Nama / IGN MLBB</label>
+  <input id="ign" placeholder="Contoh: Gampay01">
+  <label>Catatan tambahan</label>
+  <textarea id="notes" placeholder="Contoh: push sampai target tertentu, catatan akun, dll."></textarea>
+</div>
+
+<div class="panel">
+  <h3>💳 Pembayaran</h3>
+  <label>Metode pembayaran</label>
+  <select id="payment">
+    <option>QRIS</option><option>DANA</option><option>GoPay</option>
+  </select>
+  <div class="total"><span>Total pembayaran</span><strong id="total">Rp2.000</strong></div>
+  <button class="btn wa" onclick="sendWA()">📲 Kirim Order ke WhatsApp</button>
+  <div class="note">Setelah tombol ditekan, WhatsApp akan terbuka dengan format order otomatis. Jangan kirim data password di catatan.</div>
+</div>
+</section>
+</main>
+
+<footer>© 2026 GAMPAY • Joki MLBB</footer>
+
+<script>
+const PRICE = 2000;
+const WA = "6288293799632";
+
+function rupiah(n){return new Intl.NumberFormat('id-ID',{style:'currency',currency:'IDR',maximumFractionDigits:0}).format(n)}
+function calculate(){
+  const stars = Math.max(1, Number(document.getElementById('stars').value)||1);
+  document.getElementById('total').textContent = rupiah(stars*PRICE);
+}
+function chooseRank(rank){
+  document.getElementById('rank').value=rank;
+  document.getElementById('order').scrollIntoView({behavior:'smooth',block:'start'});
+  calculate();
+}
+function sendWA(){
+  const rank=document.getElementById('rank').value;
+  const stars=Math.max(1,Number(document.getElementById('stars').value)||1);
+  const ign=document.getElementById('ign').value.trim() || "-";
+  const payment=document.getElementById('payment').value;
+  const notes=document.getElementById('notes').value.trim() || "-";
+  const total=stars*PRICE;
+  const msg =
+`Halo GAMPAY, saya mau order Joki MLBB.
+
+🎮 Rank: ${rank}
+⭐ Jumlah Bintang: ${stars}
+👤 IGN: ${ign}
+💳 Pembayaran: ${payment}
+💰 Total: ${rupiah(total)}
+
+📝 Catatan:
+${notes}
+
+Mohon diproses. Terima kasih.`;
+  window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(msg),"_blank");
+}
+calculate();
+</script>
+</body>
+</html>
